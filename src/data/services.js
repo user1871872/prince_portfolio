@@ -7,7 +7,7 @@ export const servicesFeaturedList = [
     id: '1',
     projectTitle: 'Proposed one-storey residential building',
     location: 'Bacong, Anda, Bohol',
-    image: '/img/services-visual.jpg',
+    image: '/img/house3.png',
     services: [
       { label: 'Complete set of plans with sign and seal of involved professionals' },
       { label: 'Printing of plans (5 sets, A3 paper)' },
@@ -35,7 +35,7 @@ export const servicesFeaturedList = [
     id: '2',
     projectTitle: 'Commercial / multi-storey',
     location: 'likod sa balay ni jep2',
-    image: '/vite.svg',
+    image: '/img/house2.png',
     services: [
       { label: 'Structural and civil design' },
       { label: 'Site development plan' },
@@ -47,7 +47,7 @@ export const servicesFeaturedList = [
     id: '3',
     projectTitle: 'Subdivision and layout',
     location: 'likod sa balay ni john rey',
-    image: '/vite.svg',
+    image: '/img/house1.png',
     services: [
       { label: 'Subdivision layout design' },
       { label: 'Road and drainage plans' },
