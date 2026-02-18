@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         {/* Add your name or company here. */}
-        <p>© {new Date().getFullYear()} Portfolio. Add your name or company here.</p>
+        <p>© {new Date().getFullYear()} PJR Engineering Services.</p>
       </div>
     </footer>
   );
