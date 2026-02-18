@@ -34,7 +34,7 @@ export const servicesFeaturedList = [
   {
     id: '2',
     projectTitle: 'Commercial / multi-storey',
-    location: 'Your location',
+    location: 'likod sa balay ni jep2',
     image: '/vite.svg',
     services: [
       { label: 'Structural and civil design' },
@@ -46,7 +46,7 @@ export const servicesFeaturedList = [
   {
     id: '3',
     projectTitle: 'Subdivision and layout',
-    location: 'Your location',
+    location: 'likod sa balay ni john rey',
     image: '/vite.svg',
     services: [
       { label: 'Subdivision layout design' },
