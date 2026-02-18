@@ -10,7 +10,7 @@ export default function Hero() {
         {/* Add your name and title below */}
         <h1 className="hero-title">PJR Engineering Services</h1>
         <p className="hero-subtitle">
-          Civil Engineer · Layout &amp; Site Design
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
         </p>
         <div className="hero-ctas">
           <a href="#projects" className="btn" onClick={(e) => { e.preventDefault(); scrollTo('projects'); }}>
