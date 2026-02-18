@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
 export default function ProjectCard({ project }) {
-  const { id, title, category, image, description } = project;
+  const { id, title, category, image, images, description } = project;
+  const thumb = image || (images && images[0]);
 
   const content = (
     <>
       <img
-        src={image}
+        src={thumb}
         alt=""
         className="project-card-image"
         loading="lazy"

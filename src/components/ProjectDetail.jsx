@@ -23,23 +23,33 @@ export default function ProjectDetail() {
     );
   }
 
-  const { title, category, image, description, longDescription, link } = project;
+  const { title, category, image, images, description, longDescription, link } = project;
+  const galleryImages = images && images.length > 0 ? images : (image ? [image] : []);
 
   return (
     <section className="section project-detail">
       <Link to="/#projects" className="project-detail-back">
         ← Back to projects
       </Link>
-      <article className={`project-detail-content project-detail-enter ${visible ? 'visible' : ''}`}>
-        <img
-          src={image}
-          alt=""
-          className="project-detail-image"
-        />
-        <div className="project-detail-body">
+
+      <article className={`project-detail-article project-detail-enter ${visible ? 'visible' : ''}`}>
+        <header className="project-detail-hero">
           <span className="project-detail-category">{category}</span>
           <h1 className="project-detail-title">{title}</h1>
-          <p className="project-detail-description">{description}</p>
+          <p className="project-detail-lead">{description}</p>
+        </header>
+
+        {galleryImages.length > 0 && (
+          <div className="project-detail-gallery">
+            {galleryImages.map((src, index) => (
+              <div key={index} className="project-detail-gallery-item">
+                <img src={src} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="project-detail-body">
           {longDescription && (
             <div className="project-detail-long">
               {longDescription}

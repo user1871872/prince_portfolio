@@ -1,7 +1,8 @@
 /**
  * Add your project entries here.
- * Each project: { id, title, category, image, description, longDescription?, link? }
- * category is used for filtering. longDescription is optional and shown on the project detail view.
+ * Each project: { id, title, category, image, images?, description, longDescription?, link? }
+ * - image: used as card thumbnail (required for listing).
+ * - images: optional array of image URLs for the project detail gallery. If omitted, [image] is used.
  */
 export const projects = [
   {
@@ -9,8 +10,9 @@ export const projects = [
     title: 'Project title',
     category: 'Residential',
     image: '/vite.svg',
+    images: ['/vite.svg', '/vite.svg', '/vite.svg'],
     description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
-    longDescription: null, // Optional: add a longer description for the project view page
+    longDescription: null,
     link: null,
   },
   {
@@ -18,6 +20,7 @@ export const projects = [
     title: 'Project title',
     category: 'Commercial',
     image: '/vite.svg',
+    images: ['/vite.svg', '/vite.svg'],
     description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
     longDescription: null,
     link: null,
@@ -27,6 +30,7 @@ export const projects = [
     title: 'Project title',
     category: 'Infrastructure',
     image: '/vite.svg',
+    images: null,
     description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
     longDescription: null,
     link: null,
