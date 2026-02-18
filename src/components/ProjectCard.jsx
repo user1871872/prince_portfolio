@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+
 export default function ProjectCard({ project }) {
-  const { title, category, image, description, link } = project;
+  const { id, title, category, image, description } = project;
 
   const content = (
     <>
@@ -13,17 +15,14 @@ export default function ProjectCard({ project }) {
         <span className="project-card-category">{category}</span>
         <h3 className="project-card-title">{title}</h3>
         <p className="project-card-description">{description}</p>
+        <span className="project-card-view">View project →</span>
       </div>
     </>
   );
 
-  if (link) {
-    return (
-      <a href={link} className="project-card" target="_blank" rel="noopener noreferrer">
-        {content}
-      </a>
-    );
-  }
-
-  return <article className="project-card">{content}</article>;
+  return (
+    <Link to={`/project/${id}`} className="project-card">
+      {content}
+    </Link>
+  );
 }

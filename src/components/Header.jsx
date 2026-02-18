@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -9,13 +12,19 @@ export default function Header() {
     setNavOpen(false);
   };
 
+  const navLinks = [
+    { to: '/#about', label: 'About', id: 'about' },
+    { to: '/#services', label: 'Services', id: 'services' },
+    { to: '/#projects', label: 'Projects', id: 'projects' },
+    { to: '/#contact', label: 'Contact', id: 'contact' },
+  ];
+
   return (
     <header className="header">
       <div className="header-inner">
-        <a href="#hero" className="header-logo" onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>
-          {/* Replace with your name or logo text */}
+        <Link to="/" className="header-logo" onClick={() => setNavOpen(false)}>
           Portfolio
-        </a>
+        </Link>
         <button
           type="button"
           className="nav-toggle"
@@ -25,10 +34,24 @@ export default function Header() {
           {navOpen ? '✕' : '☰'}
         </button>
         <nav className={`nav ${navOpen ? 'is-open' : ''}`} aria-label="Main">
-          <a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about'); }}>About</a>
-          <a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services'); }}>Services</a>
-          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollTo('projects'); }}>Projects</a>
-          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>Contact</a>
+          {navLinks.map(({ to, label, id }) =>
+            isHome ? (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(id);
+                }}
+              >
+                {label}
+              </a>
+            ) : (
+              <Link key={id} to={to} onClick={() => setNavOpen(false)}>
+                {label}
+              </Link>
+            )
+          )}
         </nav>
       </div>
     </header>
