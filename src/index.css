@@ -518,6 +518,43 @@ a.project-card:hover {
   object-fit: cover;
   display: block;
 }
+
+/* Floor plans section */
+.project-detail-floorplans {
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+}
+.project-detail-floorplans-title {
+  margin: 0 0 var(--space-xl);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.project-detail-floorplans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+@media (min-width: 640px) {
+  .project-detail-floorplans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.project-detail-floorplans-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+.project-detail-floorplans-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}
+
 .project-detail-body {
   padding: var(--space-2xl) var(--space-xl);
 }
@@ -545,8 +582,26 @@ a.project-card:hover {
 .contact-form .field {
   margin-bottom: var(--space-lg);
 }
+.contact-form-message {
+  margin: 0 0 var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+}
+.contact-form-message--success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.contact-form-message--error {
+  background: #ffebee;
+  color: #c62828;
+}
 .contact-form .btn {
   margin-top: var(--space-sm);
+}
+.contact-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* Footer */

@@ -23,8 +23,9 @@ export default function ProjectDetail() {
     );
   }
 
-  const { title, category, image, images, description, longDescription, link } = project;
+  const { title, category, image, images, floorPlans, description, longDescription, link } = project;
   const galleryImages = images && images.length > 0 ? images : (image ? [image] : []);
+  const floorPlanList = floorPlans && floorPlans.length > 0 ? floorPlans : [];
 
   return (
     <section className="section project-detail">
@@ -46,6 +47,19 @@ export default function ProjectDetail() {
                 <img src={src} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
               </div>
             ))}
+          </div>
+        )}
+
+        {floorPlanList.length > 0 && (
+          <div className="project-detail-floorplans">
+            <h2 className="project-detail-floorplans-title">Floor plan{floorPlanList.length > 1 ? 's' : ''}</h2>
+            <div className="project-detail-floorplans-grid">
+              {floorPlanList.map((src, index) => (
+                <div key={index} className="project-detail-floorplans-item">
+                  <img src={src} alt={`Floor plan ${index + 1}`} loading="lazy" />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
