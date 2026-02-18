@@ -8,7 +8,7 @@ export default function Hero() {
     <section id="hero" className="hero">
       <div className="hero-content">
         {/* Add your name and title below */}
-        <h1 className="hero-title">Prince Jep2 Rioja</h1>
+        <h1 className="hero-title">PJR Engineering Services</h1>
         <p className="hero-subtitle">
           Civil Engineer · Layout &amp; Site Design
         </p>
