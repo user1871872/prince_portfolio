@@ -201,9 +201,11 @@ label {
   color: var(--color-primary);
 }
 .header-logo-img {
+  width: 2.5rem;
   height: 2.5rem;
-  width: auto;
-  object-fit: contain;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 .nav {
   display: flex;
