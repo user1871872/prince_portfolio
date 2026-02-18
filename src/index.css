@@ -188,6 +188,9 @@ label {
   justify-content: space-between;
 }
 .header-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   font-weight: 700;
   font-size: var(--text-lg);
   color: var(--color-text);
@@ -196,6 +199,11 @@ label {
 .header-logo:hover {
   text-decoration: none;
   color: var(--color-primary);
+}
+.header-logo-img {
+  height: 2.5rem;
+  width: auto;
+  object-fit: contain;
 }
 .nav {
   display: flex;

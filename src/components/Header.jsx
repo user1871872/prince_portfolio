@@ -23,6 +23,7 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <Link to="/" className="header-logo" onClick={() => setNavOpen(false)}>
+          <img src="/img/logopjr.jpg" alt="PJR Engineering Services" className="header-logo-img" />
           Portfolio
         </Link>
         <button
