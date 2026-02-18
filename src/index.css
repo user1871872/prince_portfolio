@@ -514,6 +514,29 @@ a.project-card:hover {
   max-width: var(--container-max);
   margin: 0 auto;
 }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-bg);
+  opacity: 0.9;
+  transition: opacity 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.social-link:hover {
+  opacity: 1;
+  color: var(--color-white);
+  text-decoration: none;
+}
 .footer p {
   margin: 0;
   font-size: var(--text-sm);
@@ -525,4 +548,98 @@ a.project-card:hover {
 }
 .footer a:hover {
   color: var(--color-white);
+}
+
+/* Scroll / entrance animations */
+.animate-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance stagger */
+.hero-animate .hero-title { transition-delay: 0.1s; }
+.hero-animate .hero-subtitle { transition-delay: 0.2s; }
+.hero-animate .hero-ctas { transition-delay: 0.3s; }
+.hero-animate .hero-title,
+.hero-animate .hero-subtitle,
+.hero-animate .hero-ctas {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.hero-animate.in-view .hero-title,
+.hero-animate.in-view .hero-subtitle,
+.hero-animate.in-view .hero-ctas {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger for service and project cards */
+.animate-in-stagger .service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.animate-in-stagger.in-view .service-card:nth-child(1) { transition-delay: 0s; }
+.animate-in-stagger.in-view .service-card:nth-child(2) { transition-delay: 0.05s; }
+.animate-in-stagger.in-view .service-card:nth-child(3) { transition-delay: 0.1s; }
+.animate-in-stagger.in-view .service-card:nth-child(4) { transition-delay: 0.15s; }
+.animate-in-stagger.in-view .service-card:nth-child(5) { transition-delay: 0.2s; }
+.animate-in-stagger.in-view .service-card:nth-child(6) { transition-delay: 0.25s; }
+.animate-in-stagger.in-view .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-in-stagger .project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.animate-in-stagger.in-view .project-card:nth-child(1) { transition-delay: 0s; }
+.animate-in-stagger.in-view .project-card:nth-child(2) { transition-delay: 0.06s; }
+.animate-in-stagger.in-view .project-card:nth-child(3) { transition-delay: 0.12s; }
+.animate-in-stagger.in-view .project-card:nth-child(4) { transition-delay: 0.18s; }
+.animate-in-stagger.in-view .project-card:nth-child(5) { transition-delay: 0.24s; }
+.animate-in-stagger.in-view .project-card:nth-child(6) { transition-delay: 0.3s; }
+.animate-in-stagger.in-view .project-card:nth-child(7) { transition-delay: 0.36s; }
+.animate-in-stagger.in-view .project-card:nth-child(8) { transition-delay: 0.42s; }
+.animate-in-stagger.in-view .project-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project detail page enter */
+.project-detail-enter {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-detail-enter.visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in,
+  .animate-in.in-view,
+  .hero-animate .hero-title,
+  .hero-animate .hero-subtitle,
+  .hero-animate .hero-ctas,
+  .hero-animate.in-view .hero-title,
+  .hero-animate.in-view .hero-subtitle,
+  .hero-animate.in-view .hero-ctas,
+  .animate-in-stagger .service-card,
+  .animate-in-stagger.in-view .service-card,
+  .animate-in-stagger .project-card,
+  .animate-in-stagger.in-view .project-card,
+  .project-detail-enter,
+  .project-detail-enter.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

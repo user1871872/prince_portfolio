@@ -1,8 +1,13 @@
+import { useInView } from '../hooks/useInView';
+
 export default function Contact() {
+  const [ref, inView] = useInView();
+
   return (
     <section id="contact" className="section contact">
-      <h2 className="section-title">Contact</h2>
-      <div className="contact-inner">
+      <div ref={ref} className={`animate-in ${inView ? 'in-view' : ''}`}>
+        <h2 className="section-title">Contact</h2>
+        <div className="contact-inner">
         {/* Add your email and phone here; form is structure-only—wire to Formspree/Netlify later if needed. */}
         <p style={{ marginBottom: '1rem' }}>
           Add your email and phone here, or use the form below.
@@ -24,6 +29,7 @@ export default function Contact() {
             Send message
           </button>
         </form>
+        </div>
       </div>
     </section>
   );
