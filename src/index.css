@@ -314,6 +314,9 @@ label {
   margin: 0 auto;
   max-width: var(--container-max);
 }
+.services-split-wrapper {
+  position: relative;
+}
 .services-split-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -334,7 +337,6 @@ label {
 .services-panel-text {
   background: #1a1d23;
   padding: var(--space-xl);
-  position: relative;
 }
 @media (min-width: 900px) {
   .services-panel-text {
@@ -345,12 +347,12 @@ label {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 3;
   width: 2.5rem;
   height: 2.5rem;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   color: var(--color-white);
   font-size: 1.5rem;
   line-height: 1;
@@ -361,19 +363,13 @@ label {
   transition: background 0.2s;
 }
 .services-carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.4);
 }
 .services-carousel-btn-prev {
-  left: var(--space-sm);
+  left: var(--space-md);
 }
 .services-carousel-btn-next {
-  right: var(--space-sm);
-}
-.services-carousel-btn-visual {
-  background: rgba(0, 0, 0, 0.4);
-}
-.services-carousel-btn-visual:hover {
-  background: rgba(0, 0, 0, 0.6);
+  right: var(--space-md);
 }
 .services-panel-overlay {
   background: rgba(255, 255, 255, 0.06);
