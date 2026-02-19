@@ -16,10 +16,9 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
       <div className={`hero-content hero-animate ${visible ? 'in-view' : ''}`}>
-        {/* Add your name and title below */}
         <h1 className="hero-title">PJR Engineering Services</h1>
         <p className="hero-subtitle">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          Civil engineering and layout design in Bohol — from residential to subdivision plans.
         </p>
         <div className="hero-ctas">
           <a href="#projects" className="btn" onClick={(e) => { e.preventDefault(); scrollTo('projects'); }}>
@@ -29,6 +28,9 @@ export default function Hero() {
             Contact
           </a>
         </div>
+        <p className="hero-trust">
+          Licensed · Sign &amp; seal · Permit-ready plans
+        </p>
       </div>
     </section>
   );
