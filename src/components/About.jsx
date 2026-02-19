@@ -1,4 +1,5 @@
 import { useInView } from '../hooks/useInView';
+import { contactInfo } from '../data/contactInfo';
 
 const expertiseItems = [
   'Site layout design',
@@ -6,11 +7,11 @@ const expertiseItems = [
   'Bill of materials',
   'Permit & notarization',
   'Complete plan sets',
-  'Serving Bohol & nearby areas',
 ];
 
 export default function About() {
   const [ref, inView] = useInView();
+  const { serviceArea, serviceAreas } = contactInfo;
 
   return (
     <section id="about" className="section about">
@@ -19,6 +20,14 @@ export default function About() {
         <p className="about-intro">
           PJR Engineering Services provides civil engineering and layout design for residential, commercial, and subdivision projects in Bohol.
         </p>
+        {serviceArea && (
+          <p className="about-service-area">
+            <strong>{serviceArea}</strong>
+            {serviceAreas && serviceAreas.length > 0 && (
+              <span className="about-service-areas"> — {serviceAreas.join(', ')}</span>
+            )}
+          </p>
+        )}
         <div className="about-grid">
           <div className="about-content">
             <p className="about-text">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useInView } from '../hooks/useInView';
 import { FORMSPREE_FORM_ID } from '../config/contactForm';
+import { contactInfo } from '../data/contactInfo';
 
 const STATUS_IDLE = 'idle';
 const STATUS_SENDING = 'sending';
@@ -11,6 +12,7 @@ export default function Contact() {
   const [ref, inView] = useInView();
   const [status, setStatus] = useState(STATUS_IDLE);
   const [errorMessage, setErrorMessage] = useState('');
+  const { phone, email, address } = contactInfo;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,9 +49,27 @@ export default function Contact() {
       <div ref={ref} className={`animate-in ${inView ? 'in-view' : ''}`}>
         <h2 className="section-title">Contact</h2>
         <div className="contact-inner">
-          <p style={{ marginBottom: '1rem' }}>
-            Add your email and phone here, or use the form below.
-          </p>
+          <div className="contact-details">
+            {phone && (
+              <a href={`tel:${phone.replace(/\s/g, '')}`} className="contact-detail-item">
+                <span className="contact-detail-icon" aria-hidden>📞</span>
+                {phone}
+              </a>
+            )}
+            {email && (
+              <a href={`mailto:${email}`} className="contact-detail-item">
+                <span className="contact-detail-icon" aria-hidden>✉️</span>
+                {email}
+              </a>
+            )}
+            {address && (
+              <p className="contact-detail-item contact-detail-address">
+                <span className="contact-detail-icon" aria-hidden>📍</span>
+                {address}
+              </p>
+            )}
+          </div>
+          <p className="contact-form-intro">Or send a message using the form below.</p>
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="field">
               <label htmlFor="contact-name">Name</label>
@@ -63,6 +83,9 @@ export default function Contact() {
               <label htmlFor="contact-message">Message</label>
               <textarea id="contact-message" name="message" placeholder="Your message" required disabled={status === STATUS_SENDING} />
             </div>
+            <p className="contact-privacy">
+              We use your details only to respond to your inquiry.
+            </p>
             {status === STATUS_SUCCESS && (
               <p className="contact-form-message contact-form-message--success">
                 Thanks! Your message has been sent.

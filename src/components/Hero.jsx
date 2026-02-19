@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { contactInfo } from '../data/contactInfo';
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -25,11 +26,11 @@ export default function Hero() {
             View work
           </a>
           <a href="#contact" className="btn btn-outline" onClick={(e) => { e.preventDefault(); scrollTo('contact'); }}>
-            Contact
+            Get a quote
           </a>
         </div>
         <p className="hero-trust">
-          Licensed · Sign &amp; seal · Permit-ready plans
+          {contactInfo.credentials}
         </p>
       </div>
     </section>

@@ -15,7 +15,9 @@ export default function Header() {
   const navLinks = [
     { to: '/#about', label: 'About', id: 'about' },
     { to: '/#services', label: 'Services', id: 'services' },
+    { to: '/#process', label: 'How it works', id: 'process' },
     { to: '/#projects', label: 'Projects', id: 'projects' },
+    { to: '/#faq', label: 'FAQ', id: 'faq' },
     { to: '/#contact', label: 'Contact', id: 'contact' },
   ];
 
